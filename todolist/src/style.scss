@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  line-height: 1.35;
+  color: black;
+  font-size: 15px;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.head {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+
+  input {
+    padding: 10px;
+    width: 300px;
+    outline: none;
+    border: 1px solid #8080802e;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button {
+    background-color: rgb(245, 217, 222);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+  }
+}
+
+.sort, .filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  margin-bottom: 5px;
+
+  button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px dotted rgb(245, 217, 222);
+
+    span {
+      display: inline-block;
+      transition: transform 0.5s ease;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.reverse {
+
+  span {
+    transform: rotate(180deg);
+    
+  }
+}
+
+.reset {
+  padding: 5px;
+  background-color: rgba(197, 197, 197, 0.311);
+  border-radius: 5px;
+}
+
+.remove {
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.task-date {
+  font-size: 13px;
+}
+
+.list {
+
+  ul {
+
+    li {
+      list-style: none;
+    }
+  }
+}

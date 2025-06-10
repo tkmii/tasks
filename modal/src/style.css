@@ -1,0 +1,77 @@
+body {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.modal {
+  opacity: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.modal::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+}
+
+.popup {
+  width: 500px;
+  height: 320px;
+  background-color: #f9dee3;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.popup__close {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.popup__close svg {
+  width: 100%;
+  height: 100%;
+}
+
+.modal.active {
+  z-index: 5;
+  opacity: 1;
+}
+
+.button {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #dcd4ff;
+  width: 185px;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.5s ease, background-color 0.5s ease;
+}
+
+.button:hover {
+  border: 2px solid #dcd4ff;
+  background-color: transparent;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+    <title>todolist</title>
+  </head>
+  <body>
+    <div class="head">
+      <label>Введите задачу</label>
+      <input type="text" />
+      <button>Добавить в список</button>
+    </div>
+    <div class="sort">
+      <button class="sort-abc">
+        по алфавиту <span>↑</span>
+      </button>
+      <button class="sort-date">
+        по дате создания <span>↑</span>
+      </button>
+    </div>
+    <div class="filter">
+      <button class="filter-active">
+        активные
+      </button>
+      <button class="filter-done">
+        выполненные
+      </button>
+    </div>
+    <button class="reset">Сброс</button>
+    <div class="list">
+      <ul>
+        
+      </ul>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.timer {
+  font-size: 80px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 7px;
+  background-color: rgb(227, 203, 245);
+  transition: opacity 0.5s ease;
+}
+
+.button-on {
+  background-color: rgb(236, 199, 218);
+}
+
+.button:hover, .button[disabled] {
+  opacity: 0.5;
+}
+
+.setting {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+#time {
+  padding: 7px;
+  border: 1px solid rgb(227, 203, 245);
+  border-radius: 7px;
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web form</title>
+  </head>
+  <body>
+    <form action="" id="form">
+      <div class="field" data-type="name">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name">
+      </div>
+      <div class="field" data-type="email">
+        <label for="email">Ваш email</label>
+        <input type="text" id="email">
+      </div>
+      <div class="field" data-type="password">
+        <label for="password">Пароль</label>
+        <input type="password" id="password">
+      </div>
+      <div class="field" data-type="confirm">
+        <label for="confirm">Подтвердите пароль</label>
+        <input type="password" id="confirm">
+      </div>
+      <button type="submit" id="submit">Отправить</button>
+    </form>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
