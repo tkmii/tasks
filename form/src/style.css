@@ -1,0 +1,48 @@
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 15px;
+}
+
+#form {
+  width: 500px;
+  border: thick double rgb(153, 116, 241);
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.field {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+#submit {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(248, 222, 246);
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+#submit:hover {
+  opacity: 0.5;
+}

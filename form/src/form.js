@@ -6,6 +6,13 @@ export class Form {
     confirm: '[data-type="confirm"]',
   };
 
+  static ERRORMSGS = {
+    name: 'Имя должно быть не менее 2х символов',
+    email: 'Введите корректный email',
+    password: 'Длина пароля должна быть не менее 8-ми символов, хотя бы одна цифра',
+    confirm: 'Пароли не совпадают',
+  }
+
   constructor() {
     this.form = document.querySelector('#form');
     this.name = document.querySelector('#name');
@@ -36,7 +43,9 @@ export class Form {
   }
 
   validatePass() {
-    return this.password.value.length >= 3;
+    const re = /\d/;
+    return this.password.value.length >= 8 && re.test(this.password.value)
+
   }
 
   validateConfirm() {
@@ -50,22 +59,22 @@ export class Form {
       {
         isValid: this.validateName(),
         selector: Form.SELECTORS.name,
-        errorMsg: 'Имя должно быть не менее 2х символов'
+        errorMsg: Form.ERRORMSGS.name
       },
       {
         isValid: this.validateEmail(),
         selector: Form.SELECTORS.email,
-        errorMsg: 'Введите корректный email'
+        errorMsg: Form.ERRORMSGS.email
       },
       {
         isValid: this.validatePass(),
         selector: Form.SELECTORS.password,
-        errorMsg: 'Длина пароля должна быть не менее 3х символов'
+        errorMsg: Form.ERRORMSGS.password
       },
       {
         isValid: this.validateConfirm(),
         selector: Form.SELECTORS.confirm,
-        errorMsg: 'Пароли не совпадают'
+        errorMsg: Form.ERRORMSGS.confirm
       }
     ];
 
@@ -98,19 +107,19 @@ export class Form {
 
   setupEventListener() {
     this.name.addEventListener('input', () => {
-      this.showError(this.validateName(), Form.SELECTORS.name, 'Имя должно быть не менее 2х символов');
+      this.showError(this.validateName(), Form.SELECTORS.name, Form.ERRORMSGS.name);
     });
 
     this.email.addEventListener('input', () => {
-      this.showError(this.validateEmail(), Form.SELECTORS.email, 'Введите корректный email');
+      this.showError(this.validateEmail(), Form.SELECTORS.email, Form.ERRORMSGS.email);
     });
 
     this.password.addEventListener('input', () => {
-      this.showError(this.validatePass(), Form.SELECTORS.password, 'Длина пароля должна быть не менее 3х символов');
+      this.showError(this.validatePass(), Form.SELECTORS.password, Form.ERRORMSGS.password);
     });
 
     this.confirm.addEventListener('input', () => {
-      this.showError(this.validateConfirm(), Form.SELECTORS.confirm, 'Пароли не совпадают');
+      this.showError(this.validateConfirm(), Form.SELECTORS.confirm, Form.ERRORMSGS.confirm);
     });
 
     this.form.addEventListener('submit', (e) => {
@@ -123,8 +132,6 @@ export class Form {
         this.formValue.password = this.password.value
         console.log(this.formValue)
         console.log('Форма успешно отправлена');
-      } else {
-        console.log('Ошибки валидации:', this.errors.join(', '));
       }
     });
   }
